@@ -68,13 +68,53 @@ footer {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <script>
-  var fname=document.getElementById(first-name).value;
-  var lname=document.getElementById(last-name).value;
-  var dOfBirth=document.getElementById(birthday).value
   
+  function test()
+  {
+  var fname=document.getElementById("first-name").value;
+  var lname=document.getElementById("last-name").value;
+  var dOfBirth=document.getElementById("birthday").value;
+  var phNo=document.getElementById("no").value;
+  var hadd=document.getElementById("add").value;
+  var genderM=document.getElementById("male").value;
+  var genderF=document.getElementById("female").value;
+  var nationality1=document.getElementById("nation").value;
+  
+  if(!fname && !lname)
+  {
+  alert("Please Enter first name and last name");
+  }
+  else if(!dOfBirth)
+  {
+  alert("Please enter date of birth");
+  }
+  else if(!phNo)
+  {
+  alert("Please enter phone number");
+  }
+  else if(!hadd)
+  {
+  alert("Please enter address");
+  
+  }
+  else if(!genderM && !genderF)
+  {
+  alert("Please select any one gender");
+  }
+  else if(!nationality1)
+  {
+  alert("Please select Nationality");
+  }
+  else
+  {
+  alert("login");
+  }
+  
+  }
   </script>
   
 </head>
+
 <body>
 
 <div class="header">
@@ -94,7 +134,7 @@ footer {
   
 <div class="container mt-3">
   <h2>Registration form</h2>
-  <form action="/action_page.php">
+  <form>
     <div class="mb-3 mt-3 ">
       <label for="nane">Name:</label>
       <input type="name" class="form-control" id="first-name" placeholder="First Name" name="fn">
@@ -109,12 +149,12 @@ footer {
     <label for="gender">Gender:</label>
     <div class="form-check mb-3">
       <label class="form-check-label">
-        <input class="form-check-input" type="radio" name="any_one"> Male
+        <input class="form-check-input" type="radio"  id="male" name="any_one"> Male
       </label>
     </div>
 	<div class="form-check mb-3">
       <label class="form-check-label">
-        <input class="form-check-input" type="radio" name="any_one"> Female
+        <input class="form-check-input" type="radio" id="female" name="any_one"> Female
       </label>
     </div>
 	<label for="phno">Phno:</label>
@@ -129,10 +169,10 @@ footer {
 	<div class="mb-3">
 	  <input type="address" class="form-control" id="add" placeholder="Add" name="addr">
     </div>
-	<label for="gender">Nationality:</label>
+	<label for="nationality">Nationality:</label>
     <div class="form-check mb-3">
       <label class="form-check-label">
-        <input class="form-check-input" type="radio" name="any_one"> Indian
+        <input class="form-check-input" type="radio" id="nation" name="any_one"> Indian
       </label>
     </div>
 	<div class="form-check mb-3">
@@ -161,7 +201,7 @@ footer {
         <input class="form-check-input" type="checkbox" name="cloth"> Cloths
       </label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" onclick="test()" >Submit</button>
   </form>
 </div>
 
